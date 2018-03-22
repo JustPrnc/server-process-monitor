@@ -12,6 +12,7 @@ Monitoraggio server. Comandi disponibili:
 
 4) Chiudi
 
+#comment
 END
 
 read "Inserisci numero comando [1-4]: " cmd
