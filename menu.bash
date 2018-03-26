@@ -12,31 +12,32 @@ Monitoraggio server. Comandi disponibili:
 
 4) Chiudi
 
-#comment
 END
 
-read "Inserisci numero comando [1-4]: " cmd
+read -p "Inserisci numero comando [1-4]: " cmd
 
 case $cmd in
 
 1)
 	string=`top | cut -d: -f12`
-	if[[ $string == "recorder.bash" ]]; then
+	if [ $string == "bash" ] 
+	then
 		echo "Monitoraggio già in corso"
 	else
-		bash recorder.bash 
+		`bash recorder.bash` 
 	fi
 	;;
 2)
 	string=`top | cut -d: -f12`
-	if[[ $string == "recorder.bash" ]]; then
+	if [ $string == "recorder.bash" ]
+	then
 		killall recorder.bash
 	else
 		echo "Monitoraggio non iniziato"
 	fi
 	;;
 3)
-	bash query.bash;;
+	`bash query.bash`;;
 4)
 	exit;;	
 
