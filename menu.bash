@@ -20,11 +20,11 @@ case $cmd in
 
 1)
 	string=`top | cut -d: -f12`
-	if [ $string == "bash" ] 
+	if [ $string == "bash" ]
 	then
 		echo "Monitoraggio già in corso"
 	else
-		`bash recorder.bash` 
+		`bash recorder.bash`
 	fi
 	;;
 2)
@@ -39,7 +39,7 @@ case $cmd in
 3)
 	`bash query.bash`;;
 4)
-	exit;;	
+	exit;;
 
 *)
 	echo "Comando non valido";;
