@@ -69,4 +69,4 @@ for ((i=0; i<=${#userlist[@]}; i++)); do
 done
 
 # Sleep e ri-esecuzione dello script (5 secondi)
-sleep 5 && `bash recorder.bash`
+sleep 60 && `./recorder.bash`
