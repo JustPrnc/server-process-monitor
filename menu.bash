@@ -19,25 +19,34 @@ read -p "Inserisci numero comando [1-4]: " cmd
 case $cmd in
 
 1)
-	string=`top | cut -d: -f12`
-	if [ $string == "bash" ] 
-	then
-		echo "Monitoraggio già in corso"
-	else
-		`bash recorder.bash` 
-	fi
+	for process in `ps -e | tr -s " " | cut -d " " -f 5`; do
+		if [ $process == "/bin/bash ./recorder.bash" ] 
+		then
+			echo "Monitoraggio già in corso"
+			break
+		fi
+	done
+	
+	`./recorder.bash` &
 	;;
-2)
-	string=`top | cut -d: -f12`
-	if [ $string == "recorder.bash" ]
-	then
-		killall recorder.bash
-	else
-		echo "Monitoraggio non iniziato"
+2)	
+	control=0
+	for process in `ps -e | tr -s " " | cut -d " " -f 5`; do
+		if [ $process == "/bin/bash ./recorder.bash" ]
+		then
+			`killall recorder.bash`
+			control=1
+			break
+		fi
+	done
+
+	if [ $control == 0 ]; then
+		echo "Monitoraggio non in corso"
 	fi
 	;;
 3)
-	`bash query.bash`;;
+	`bash query.bash` &
+	;;
 4)
 	exit;;	
 
