@@ -26,9 +26,9 @@ case $cmd in
 			break
 		fi
 	done
-
 	`./recorder.bash` &
 	;;
+
 2)
 	control=0
 	for process in `ps -e | tr -s " " | cut -d " " -f5`; do
@@ -42,7 +42,8 @@ case $cmd in
 
 	if [ $control == 0 ]
 	then
-		echo "Nessun monitoraggio"
+
+		echo "Nessun monitoraggio in corso"
 	fi
 	;;
 3)
