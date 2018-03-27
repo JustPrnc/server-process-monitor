@@ -53,13 +53,6 @@ filename="report_`date "+%Y%m%d"`_`date "+%H%M"`.csv"
 	#return
 #}
 
-
-#$getUser
-#$getProcess
-#$getCommand
-#$getStart
-#$getTime
-
 # Creazione file 
 touch $filename
 
@@ -69,4 +62,4 @@ for ((i=0; i<=${#userlist[@]}; i++)); do
 done
 
 # Sleep e ri-esecuzione dello script (5 secondi)
-sleep 60 && `./recorder.bash`
+sleep 60 && `./recorder.bash` &
