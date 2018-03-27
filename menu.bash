@@ -19,36 +19,36 @@ read -p "Inserisci numero comando [1-4]: " cmd
 case $cmd in
 
 1)
-	for process in `ps -e | tr -s " " | cut -d " " -f 5`; do
-		if [ $process == "/bin/bash ./recorder.bash" ] 
+	for process in `ps -e | tr -s " " | cut -d " " -f5`; do
+		if [ $process == "recorder.bash" ]
 		then
 			echo "Monitoraggio già in corso"
 			break
 		fi
 	done
-	
+
 	`./recorder.bash` &
 	;;
-2)	
+2)
 	control=0
-	for process in `ps -e | tr -s " " | cut -d " " -f 5`; do
-		if [ $process == "/bin/bash ./recorder.bash" ]
+	for process in `ps -e | tr -s " " | cut -d " " -f5`; do
+		if [ $process == "recorder.bash" ]
 		then
-			`killall recorder.bash`
 			control=1
+			`killall recorder.bash`
 			break
 		fi
 	done
 
-	if [ $control == 0 ]; then
-		echo "Monitoraggio non in corso"
+	if [ $control == 0 ]
+	then
+		echo "Nessun monitoraggio"
 	fi
 	;;
 3)
-	`bash query.bash` &
-	;;
+	`bash query.bash`;;
 4)
-	exit;;	
+	exit;;
 
 *)
 	echo "Comando non valido";;
