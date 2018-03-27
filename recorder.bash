@@ -54,13 +54,6 @@ filename="report_`date "+%Y%m%d"`_`date "+%H%M"`.csv"
 	#return
 #}
 
-
-#$getUser
-#$getProcess
-#$getCommand
-#$getStart
-#$getTime
-
 # Creazione file
 touch $filename
 

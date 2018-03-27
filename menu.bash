@@ -42,8 +42,9 @@ case $cmd in
 
 	if [ $control == 0 ]
 	then
-
-		echo "Nessun monitoraggio in corso"
+		killall recorder.bash
+	else
+		echo "Monitoraggio non iniziato"
 	fi
 	;;
 3)
