@@ -40,10 +40,7 @@ case $cmd in
 		fi
 	done
 
-	if [ $control == 0 ]
-	then
-		killall recorder.bash
-	else
+	if [ $control == 0 ]; then
 		echo "Monitoraggio non iniziato"
 	fi
 	;;
@@ -53,6 +50,6 @@ case $cmd in
 	exit;;
 
 *)
-	echo "Comando non valido";;
+	`./menu.bash`;;
 
 esac
