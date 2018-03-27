@@ -1,7 +1,8 @@
 #!/bin/bash
 
-cat<< END
 
+
+cat<< END
 Monitoraggio server. Comandi disponibili:
 
 1) Inizia monitoraggio
@@ -13,6 +14,8 @@ Monitoraggio server. Comandi disponibili:
 4) Chiudi
 
 END
+
+while true; do
 
 read -p "Inserisci numero comando [1-4]: " cmd
 
@@ -26,7 +29,7 @@ case $cmd in
 			break
 		fi
 	done
-	`./recorder.bash` &
+	./recorder.bash &
 	;;
 
 2)
@@ -45,11 +48,28 @@ case $cmd in
 	fi
 	;;
 3)
-	`bash query.bash`;;
+	./query.bash
+	;;
 4)
-	exit;;
+	exit
+	;;
 
 *)
-	`./menu.bash`;;
+cat<< END
+
+Monitoraggio server. Comandi disponibili:
+
+1) Inizia monitoraggio
+
+2) Ferma monitoraggio
+
+3) Stampa info utilizzo
+
+4) Chiudi
+
+END
+	;;
 
 esac
+
+done

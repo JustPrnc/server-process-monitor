@@ -62,4 +62,4 @@ for ((i=0; i<=${#userlist[@]}; i++)); do
 done
 
 
-sleep 2 && `./recorder.bash` &
+sleep 10 && `./recorder.bash` &
