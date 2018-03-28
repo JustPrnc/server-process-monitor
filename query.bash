@@ -20,3 +20,11 @@ for user in ${users[@]}; do
 	echo "$user: `cat $file | grep $user | wc -l`"
 	let "i++"
 done
+
+echo
+
+read -p "Inserire utente: " user
+
+for report in `ls | grep report`; do
+	echo "report: $report; processi `cat $report | grep $user | wc -l`" 
+done
