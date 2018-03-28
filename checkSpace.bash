@@ -15,10 +15,14 @@ if (( $total >= 50000 ));then
 		let "i++"
 	done
 	
+	echo
 	echo "Elimino i seguenti file: "
 	echo `ls *.csv | head -n$i`
+	echo
 	rm `ls *.csv | head -n$i`
-else
+else	
+	echo
 	echo "Nessun file da cancellare, la somma dello spazio occupato non supera i 50kB"
+	echo
 fi
 	
