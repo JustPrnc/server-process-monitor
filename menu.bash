@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 cat<< END
 Monitoraggio server. Comandi disponibili:
 
@@ -13,11 +11,13 @@ Monitoraggio server. Comandi disponibili:
 
 4) Chiudi
 
+5) Controllo spazio
+
 END
 
 while true; do
 
-read -p "Inserisci numero comando [1-4]: " cmd
+read -p "Inserisci numero comando [1-5]: " cmd
 
 case $cmd in
 
@@ -53,6 +53,9 @@ case $cmd in
 4)
 	exit
 	;;
+5)
+	./checkSpace.bash
+	;;
 
 *)
 cat<< END
@@ -66,6 +69,8 @@ Monitoraggio server. Comandi disponibili:
 3) Stampa info utilizzo
 
 4) Chiudi
+
+5) Controllo spazio
 
 END
 	;;
