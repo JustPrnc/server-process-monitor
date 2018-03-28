@@ -25,6 +25,8 @@ echo
 
 read -p "Inserire utente: " user
 
+echo
 for report in `ls | grep report`; do
 	echo "report: $report; processi `cat $report | grep $user | wc -l`" 
 done
+echo
