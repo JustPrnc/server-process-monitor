@@ -1,4 +1,4 @@
-Bash Project
+Bash Project - Server Process Monitor
 ============
 
 Bash project for the Operating Sistems class at UniVR's IT Department
